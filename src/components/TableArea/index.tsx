@@ -1,5 +1,6 @@
 import { Table, TableHeadColumn } from "./styles";
 import { Item } from "../../types/Item";
+import { TableItem } from '../TableItem/index';
 
 interface ListProps {
   filteredList: Item[];
@@ -19,12 +20,7 @@ export const TableArea = ({ filteredList }: ListProps) => {
       <tbody>
         {filteredList &&
           filteredList.map((item, index) => (
-            <tr key={index}>
-              <td></td>
-              <td>{item.category}</td>
-              <td>{item.title}</td>
-              <td>{item.value}</td>
-            </tr>
+            <TableItem key={index} item={item} />
           ))}
       </tbody>
     </Table>
